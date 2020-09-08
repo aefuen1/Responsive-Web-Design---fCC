@@ -1,0 +1,149 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 300;
+    color:black;
+    font-size: 22px;
+    background: linear-gradient(to right, hsl(0, 0%, 100%), #d3f0fa);
+}
+h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    text-align: center;
+}
+#header-img{
+    width: 76px;
+    height: 78px;
+    border-radius: 2%;
+}
+header{
+    position: fixed;
+    top: 0;
+    width: 98%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(to right, hsl(0, 0%, 100%), #d3f0fa);
+}
+
+#logo-title{
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+nav{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media (max-width:950px){
+    nav{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+main{
+    margin-top: 80px;
+}
+
+@media (max-width:950px){
+    main{
+        margin-top: 150px;
+    }
+}
+
+#intro{
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: justify;
+}
+
+#lvideo{
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+}
+#services{
+    display: grid;
+    grid-template-rows: 3;
+    grid-template-rows: 2;
+    border-radius:1%;
+}
+#stitle{
+    grid-column: 1/4;
+    grid-row: 1/2;
+}
+#small{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+#medium{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+#large{
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+#services > section{
+    background: linear-gradient(to right, rgba(22, 117, 109, 0.6), rgba(20, 119, 136, 0.6));
+    margin-left: 2%;
+    margin-right: 2%;
+    border-radius: 2%;
+    color: black;
+}
+
+.nav-link{
+    text-decoration: unset;
+    color: black;
+}
+#contact{
+    margin-left: 20%;
+    margin-right: 20%;
+    text-align: center;
+}
+#email{
+    width: 95%;
+    height: 2rem;
+}
+
+@media (max-width:900px){
+    iframe{
+        width: 257px;
+        height: 150px;
+    }
+}
+ul{
+    line-height: 40px;
+}
+footer{
+    text-align: center;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 5rem;
+    width: 90%;
+    background-color: rgb(46, 126, 132);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#submit{
+    border-radius: 2%;
+    border-style: solid;
+    width: 40%;
+    margin-top: 2rem;
+    height: 2.5rem;
+    background-color:teal;
+    border-color: teal;
+    color: white;
+    font-size: 22px;
+}

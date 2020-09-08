@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Electrical Documentation</title>
+    <link rel="stylesheet" type="text/css" href="technicalDP.css" media="screen" />
+</head>
+<body>
+    <nav id="navbar">
+        <header>Electrical Documentation</header>
+        <ul>
+            <li><a href="#Introduction" class="nav-link">Introduction</a></li>
+            <li><a href="#Power_Systems" class="nav-link">Power Systems</a></li>
+            <li><a href="#Load_Flow" class="nav-link">Load Flow</a></li>
+            <li><a href="#Short-circuit" class="nav-link">Short-circuit</a></li>
+            <li><a href="#Maintenance" class="nav-link">Maintenance</a></li>
+            <li><a href="#Control_Systems" class="nav-link">Control Systems</a></li>
+            <li><a href="#Telecommunications" class="nav-link">Telecommunications</a></li>
+            <li><a href="#References" class="nav-link">References</a></li>
+        </ul>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <article>
+                <p>
+                    Electricity is the set of physical phenomena associated with the presence and motion of matter 
+                    that has a property of electric charge. In early days, electricity was considered as being unrelated
+                    to magnetism. Later on, many experimental results and the development of Maxwell's equations indicated
+                    that both electricity and magnetism are from a single phenomenon: electromagnetism. Various common 
+                    phenomena are related to electricity, including lightning, static electricity, electric heating, 
+                    electric discharges and many others.
+                </p>
+           </article>
+        </section>
+        <section class="main-section" id="Power_Systems">
+            <header>Power Systems</header>
+            <article>
+                <p>
+                    An electric power system is a network of electrical components deployed to supply, transfer, and
+                    use electric power. An example of an electric power system is the grid that provides power to an 
+                    extended area. An electrical grid power system can be broadly divided into the generators that 
+                    supply the power, the transmission system that carries the power from the generating centres to 
+                    the load centres, and the distribution system that feeds the power to nearby homes and industries. 
+                    Smaller power systems are also found in industry, hospitals, commercial buildings and homes. The 
+                    majority of these systems rely upon three-phase AC power—the standard for large-scale power 
+                    transmission and distribution across the modern world. Specialised power systems that do not always 
+                    rely upon three-phase AC power are found in aircraft, electric rail systems, ocean liners and 
+                    automobiles.
+                </p>
+                <p>Among the most used electrical tools for power systems analysis, we find:</p>
+                <ul>
+                    <li>Load flow analysis.</li>
+                    <li>Short-circuit analysis.</li>
+                    <li>Harmonic analysis.</li>
+                    <li>Reliability analysis</li>
+                    <li>Motor starting analysis.</li>
+                </ul>
+                <p>In this documentation, only the Load flow and Short-circuit analysis will be described.</p>
+            </article>
+            </section>
+        <section class="main-section" id="Load_Flow">
+            <header>Load Flow</header>
+            <article>
+                <p>
+                    In power engineering, the power-flow study, or load-flow study, is a numerical 
+                    analysis of the flow of electric power in an interconnected system. A power-flow study 
+                    usually uses simplified notations such as a one-line diagram and per-unit system, and 
+                    focuses on various aspects of AC power parameters, such as voltages, voltage angles, real 
+                    power and reactive power. It analyzes the power systems in normal steady-state operation.
+                </p>
+                <p>
+                    A load flow study is especially valuable for a system with multiple load centers, such 
+                    as a refinery complex. The power flow study is an analysis of the system’s capability to 
+                    adequately supply the connected load. The total system losses, as well as individual line 
+                    losses, also are tabulated. Transformer tap positions are selected to ensure the correct 
+                    voltage at critical locations such as motor control centers. Performing a load flow study 
+                    on an existing system provides insight and recommendations as to the system operation and 
+                    optimization of control settings to obtain maximum capacity while minimizing the operating 
+                    costs. The results of such an analysis are in terms of active power, reactive power, 
+                    magnitude and phase angle. Furthermore, power-flow computations are crucial for optimal 
+                    operations of groups of generating units.
+                </p>
+                <p>Here's a presentation of the load flow algorithm through the Newton-Raphson method:</p>
+                <div>
+                        <code>
+                                Start <br>
+                                Read x, e, n, d<br>
+                                *x is the initial guess<br>
+                                e is the absolute error i.e the desired degree of accuracy<br>
+                                n is for operating loop<br>
+                                d is for checking slope*<br>
+                                Do for i =1 to n in step of 2<br>
+                                f = f(x)<br>
+                                f1 = f'(x)<br>
+                                If ( [f1] < d), then display too small slope and goto 11.<br>
+                                *[ ] is used as modulus sign*<br>
+                                x1 = x – f/f1<br>
+                                If ( [(x1 – x)/x1] < e ), the display the root as x1 and goto 11.<br>
+                                *[ ] is used as modulus sign*<br>
+                                x = x1 and end loop<br>
+                                Display method does not converge due to oscillation.<br>
+                                Stop
+                            </code>
+                </div>
+            </article>
+        </section>
+        <section class="main-section" id="Short-circuit">
+            <header>Short-circuit</header>
+            <article>
+                <p>
+                    A Short circuit analysis is used to determine the magnitude of short circuit current, 
+                    the system is capable of producing, and compares that magnitude with the interrupting 
+                    rating of the overcurrent protective devices (OCPD). Since the interrupting ratings 
+                    are based by the standards, the methods used in conducting a short circuit analysis 
+                    must conform to the procedures which the standard making organizations specify for 
+                    this purpose. The American National Standards Institute (ANSI) publishes both the 
+                    standards for equipment and the application guides, which describes the calculation 
+                    methods. 
+                </p>
+                <p>
+                    Short-Circuit Currents are currents that introduce large amounts of destructive energy 
+                    in the forms of heat and magnetic force into a power system. A short circuit is 
+                    sometimes called a fault. It is a specific kind of current that introduces a large 
+                    amount of energy into a power system. It can be in the form of heat or in the form of 
+                    magnetic force. Basically, it is a low-resistance path of energy that skips part of a 
+                    circuit and causes the bypassed part of the circuit to stop working. The reliability 
+                    and safety of electric power distribution systems depend on accurate and thorough 
+                    knowledge of short-circuit fault currents that can be present, and on the ability of 
+                    protective devices to satisfactorily interrupt these currents. Knowledge of the 
+                    computational methods of power system analysis is essential to engineers responsible for 
+                    planning, design, operation, and troubleshooting of distribution systems.
+                </p>
+                <p>
+                    Short-circuit calculations are required for the application and coordination of 
+                    protective relays and the rating of equipment. All fault types can be simulated. 
+                    Carelab’s short-circuit study provides a detailed report identifying breaker ratings, 
+                    breaker fault duties, discussions, and recommendations for any deficiencies found. 
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Maintenance">
+            <header>Maintenance</header>
+            <article>
+                <p>
+                    Electrical equipment malfunctions and failures are responsible for million dollar losses 
+                    to facilities, industries and businesses worldwide. As an equipment starts to display signs 
+                    of electrical aging, it should act as a trigger for the employer or owner to carry out 
+                    preventive maintenance to avoid catastrophic failure.
+                </p>
+                <p>
+                    Scheduled routine maintenance can significantly increase the lifespan and reduce their 
+                    failure rate for all types of electrical equipment, which can be achieved by having a 
+                    proper maintenance program.
+                </p>
+                <p>
+                    A well-administered maintenance plan will reduce accidents, save working personnel's 
+                    lives and minimize costly breakdowns and unplanned shutdowns of production equipment.
+                </p>
+                <p>
+                    The NFPA 70B provides general guidelines for the implementation of a useful 
+                    maintenance plan by breaking it down into six (06) major categorie.
+                </p>
+            </article>
+        </section>
+        <section class="main-section" id="Control_Systems">
+            <header>Control Systems</header>
+            <article>
+                <p>
+                    A control system is a system of devices or set of devices, that manages, commands, directs 
+                    or regulates the behavior of other devices or systems to achieve desired results. In other 
+                    words, the definition of a control system can be simplified as a system, which controls 
+                    other systems. As the human civilization is being modernized day by day the demand for 
+                    automation is increasing accordingly. Automation highly requires control of devices.
+                </p>
+                <p>
+                    In recent years, control systems have played a central role in the development and 
+                    advancement of modern technology and civilization. Practically every aspect of our 
+                    day-to-day life is affected less or more by some control system. A bathroom toilet 
+                    tank, a refrigerator, an air conditioner, a geezer, an automatic iron, an automobile 
+                    all are control system. These systems are also used in industrial processes for more 
+                    output. We find control systems in the quality control of products, weapons system, 
+                    transportation systems, power system, space technology, robotics and many more.
+                </p>
+                <p>
+                    In this field exists 3 types of main cotrollers wich are PID, PI and D controllers.
+                    Here's some pseudo code for the discrete version of PID controller:
+                </p>
+                <div>
+                        <code>
+                                error_prior = 0 <br>
+                                integral = 0<br>
+                                KP = Some value you need to come up (see tuning section below)<br>
+                                KI = Some value you need to come up (see tuning section below)<br>
+                                KD = Some value you need to come up (see tuning section below)<br>
+                                <br>
+                                while(1) {<br>
+                                    error = desired_value – actual_value<br>
+                                    integral = integral + (error*iteration_time)<br>
+                                    derivative = (error – error_prior)/iteration_time<br>
+                                    output = KP*error + KI*integral + KD*derivative + bias<br>
+                                    error_prior = error<br>
+                                    sleep(iteration_time)<br>
+                                }
+                            </code>
+                </div>
+                <p>This is a brief pseudo code of a PI controller:</p>
+                <div>
+                        <code>
+                                // option A: integrate, then scale<br>
+                                e_integral = e_integral + e*dt;<br>
+                                x = Kp*e + Ki*e_integral;<br>
+                                <br>
+                                // option B: scale, then integrate<br>
+                                x_integral = x_integral + Ki*e*dt;<br>
+                                x = Kp*e + x_integral;
+                        </code>
+                </div>
+                <p>As the P controller is only a constant, its code will not be showed.</p>
+            </article>
+        </section>
+        <section class="main-section" id="Telecommunications">
+            <header>Telecommunications</header>
+            <article>
+                <p>
+                    Telecommunication, science and practice of transmitting information by electromagnetic means. Modern 
+                    telecommunication centres on the problems involved in transmitting large volumes of information over 
+                    long distances without damaging loss due to noise and interference. The basic components of a modern 
+                    digital telecommunications system must be capable of transmitting voice, data, radio, and television 
+                    signals. Digital transmission is employed in order to achieve high reliability and because the cost of 
+                    digital switching systems is much lower than the cost of analog systems. In order to use digital 
+                    transmission, however, the analog signals that make up most voice, radio, and television communication 
+                    must be subjected to a process of analog-to-digital conversion. (In data transmission this step is 
+                    bypassed because the signals are already in digital form; most television, radio, and voice 
+                    communication, however, use the analog system and must be digitized.) In many cases, the digitized 
+                    signal is passed through a source encoder, which employs a number of formulas to reduce redundant 
+                    binary information. After source encoding, the digitized signal is processed in a channel encoder, 
+                    which introduces redundant information that allows errors to be detected and corrected. The encoded 
+                    signal is made suitable for transmission by modulation onto a carrier wave and may be made part of a 
+                    larger signal in a process known as multiplexing. The multiplexed signal is then sent into a 
+                    multiple-access transmission channel. After transmission, the above process is reversed at the 
+                    receiving end, and the information is extracted.
+                </p>
+                <p>Here's an example of a RIP configuration in a router:</p>
+                <div>
+                        <code>
+                                Router# show running-config <br>
+                                router rip<br>
+                                version 2<br>
+                                network 10.0.0.0<br>
+                                network 192.168.1.0<br>
+                                no auto-summary<br>
+                                !
+                            </code>
+                </div>
+                <p>And a way to verify the configuration:</p>
+                <div>
+                        <code>
+                                Router# show ip route<br>
+                                Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP<br>
+                                D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area<br>
+                                N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2<br>
+                                E1 - OSPF external type 1, E2 - OSPF external type 2<br>
+                                i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2<br>
+                                ia - IS-IS inter area, * - candidate default, U - per-user static route<br>
+                                o - ODR, P - periodic downloaded static route<br>
+                                <br>
+                                Gateway of last resort is not set<br>
+                                <br>
+                                10.0.0.0/24 is subnetted, 1 subnets<br>
+                                C 10.108.1.0 is directly connected, Loopback0<br>
+                                R 3.0.0.0/8 [120/1] via 2.2.2.1, 00:00:02, Ethernet0/0
+                        </code>
+                </div>
+            </article>
+        </section>
+        <section class="main-section" id="References">
+            <header>References</header>
+            <p>This information was received from many internet websites.</p>
+        </section>
+        <footer>This is a practice website. Is not ever intended to make any profit.</footer>
+    </main>
+</body>
+</html>

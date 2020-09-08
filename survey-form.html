@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Andres' Survey Form</title>
+        <link rel="stylesheet" type="text/css" href="survey-form.css" media="screen" />
+        <link href="http://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet" type="text/css" />
+        <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <header>
+        <h1 id="title">Andres' Survey Form</h1>
+        <p id="description">Help me to improve myself into being a good engineer</p>
+        </header>
+        <main>
+        <form action="C:survey_form/tucorazon" id="survey-form">
+            <label for="name" id="name-label">Name:<br></label>
+            <input class="input_txt" type="text" name="name" id="name" placeholder="Ex. Yolanda Bolivar" required>
+            <label for="email" id="email-label"><br>Email:<br></label>
+            <input class="input_txt" type="email" name="email" id="email" placeholder="Ex. yolanda@gmail.com" required>
+            <label for="number" id="number-label"> <br> Years of experience: <br> </label>
+            <input class="input-n" type="number" name="years" id="number" placeholder="Select your years if exp."
+            min="0" max="60" required>
+
+            <br><p>Your Speciality:</p>
+            <select name="dropdown" id="dropdown">
+                <option value="selec" disabled selected>Select an option</option>
+                <option value="civil">Civil Engineer</option>
+                <option value="it">IT Engineer</option>
+                <option value="electrical">Electrical Engineer</option>
+                <option value="mechanical">Mechanical Engineer</option>
+                <option value="chemical">Chemical Engineer</option>
+                <option value="software">Software Engineer</option>
+                <option value="student">Student</option>
+                <option value="other">Other</option>
+            </select>
+
+            <br><p>How would you rate the Andres' knowledge in engineering:</p>
+            <input type="radio" name="rate" id="exc" checked value="exc">
+            <label for="exc">Excellent</label><br>
+            <input type="radio" name="rate" id="good" value="good">
+            <label for="good">Good</label><br>
+            <input type="radio" name="rate" id="inter" value="inter">
+            <label for="inter">Intermediate</label><br>
+            <input type="radio" name="rate" id="bad" value="bad">
+            <label for="bad">Bad</label><br>
+            <input type="radio" name="rate" id="vbad" value="vbad">
+            <label for="vbad">Very Bad</label><br>
+
+            <p>Would you like to continue working with Andres:</p>
+            <select name="cwork" id="cwork">
+                <option value="sel" disabled selected>Select an option</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                <option value="na">Prefer not to answer</option>
+            </select>
+
+            <p>Which are the fields in which Andres have to focus his improvement actions:</p>
+            <input type="checkbox" name="cboxes" id="ml" value="ml">
+            <label for="ml">Machine Learning</label><br>
+            <input type="checkbox" name="cboxes" id="psystems" value="psystems">
+            <label for="psystems">Power Systems</label><br>
+            <input type="checkbox" name="cboxes" id="csystems" value="csystems">
+            <label for="csystems">Control Systems</label><br>
+            <input type="checkbox" name="cboxes" id="automat" value="automat">
+            <label for="automat">Automation</label><br>
+            <input type="checkbox" name="cboxes" id="inst" value="inst">
+            <label for="inst">Instruments</label><br>
+            <input type="checkbox" name="cboxes" id="ai" value="ai">
+            <label for="ai">Artificial Intelligence</label>
+
+            <p>Leave your comments below:</p>
+            <textarea name="ta" id="ta" cols="50" rows="10" minlength="300"></textarea><br><br>
+
+            <button type="submit" class="but" id="submit">Submit</button>
+        </form>
+        </main>
+    </body>
+</html>
